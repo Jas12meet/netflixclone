@@ -1,0 +1,246 @@
+/*1) agr ap chahte ho ki netflix alag se ubhr k dekhe so  position: relative; z-index: 10; buttons m v yeh kiye taaki buttons jo h pop-out ho ke aa ske
+2)hero k parent ki height set h toh hmlog hero ki height ko % mei rkh skte h
+3).hero >:nth-child(1) aisa krne s direct child ki baat hori h so upcoming first child m ni lgega for eg:email m lg jaa rha th so bht bda ho ja rha th wo
+4)opacity: 0.68; taaki backgrnd jyada na dikhe
+5) padding: 16px 24px; email wla dbba  k spacing bdhaye h taaki bagal wle dabbe s match kr ske.
+6) padding: 16px 24px;font-size: 6px; but aisa krne s yeh sath m ni baith rhe h then hme flex box k sahara lena hoga
+7)rgba(23,23,23,0.7) last wla alpha=0.7 taaki uske andar email jo likha h wo chmke
+8)   color:white;taaki koi email likhe toh dkehe
+9)class first k andar k immediate div (.first>div:first-child)  div :nth-child(2) div k baad space dedena taaki dusra line k font chotha ho jaaye*/
+
+@import url("https://fonts.googleapis.com/css2?family=Martel+Sans:wght@600&family=Poppins:wght@300&display=swap");
+
+body {
+  background-color: black;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+.main {
+  background-image: url("https://assets.nflxext.com/ffe/siteui/vlv3/0552717c-9d8c-47bd-9640-4f4efa2de663/537e2c5e-c750-4d4c-9f7a-e66fe93eb977/IN-en-20240701-POP_SIGNUP_TWO_WEEKS-perspective_WEB_b00eeb83-a7e8-4b5b-8ff7-86ed92c51caf_large.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: max(1200px, 100vw);
+  height: 86vh;
+  position: relative;
+}
+.main .box {
+  height: 70vh;
+  width: 100%;
+  opacity: 0.68;
+  background-color: black;
+  position: absolute;
+  top: 0;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  max-width: 60vw;
+  align-items: center;
+  margin: auto;
+  height: 100px;
+}
+
+nav img {
+  color: red;
+  width: 130px;
+  position: relative;
+  z-index: 10;
+}
+
+nav button {
+  position: relative;
+  z-index: 10;
+}
+
+.hero {
+  font-family: "Netflix Sans", "Helvetica Neue", "Segoe UI", Roboto, Ubuntu,
+    sans-serif;
+  font-family: "Poppins", sans-serif;
+  height: calc(100%-100px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: white;
+  position: relative;
+  gap: 23px;
+  padding: 0 30px;
+}
+
+
+.hero > :nth-child(1) {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 900;
+  font-size: 48px;
+  text-align: center;
+}
+.hero > :nth-child(2) {
+  font-weight: 400;
+  font-size: 24px;
+  text-align: center;
+}
+.hero > :nth-child(3) {
+  font-weight: 400;
+  font-size: 20px;
+  text-align: center;
+}
+.seperation {
+  height: 7px;
+  background-color: rgb(46, 44, 44);
+  position: relative;
+  z-index: 20;
+}
+.btn {
+  padding: 3px 8px;
+  font-weight: 400;
+  color: white;
+  background-color: rgba(23, 23, 23, 0.7);
+  border: 1px solid white;
+  font-family: "Poppins", sans-serif;
+  cursor: pointer;
+}
+.btn-red {
+  background-color: red;
+  color: white;
+  padding: 3px 24px;
+  font-size: 20px;
+  border-radius: 4px;
+  font-weight: 400;
+}
+.hero-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.main input {
+  padding: 7px 101px 8px 14px;
+  font-weight: 900;
+  font-size: 12px;
+  color: white;
+  border-radius: 4px;
+  background-color: rgba(23, 23, 23, 0.7);
+  border: 1px solid rgba(23, 23, 23, 0.5);
+}
+.btn-red-sm {
+  background-color: red;
+  color: white;
+}
+
+.first {
+  display: flex;
+  justify-content: center;
+  max-width: 70vw;
+  margin: auto;
+  color: white;
+  justify-content: center;
+  align-items: center;
+}
+
+.secImg {
+  position: relative;
+  top: 0;
+}
+
+.secImg img {
+  width: 555px;
+  position: relative;
+  z-index: 10;
+}
+
+.secImg video {
+  position: absolute;
+  top: 51px;
+  right: 0;
+  width: 555px;
+}
+
+/* to make website responsive media-query lgare h */
+@media  screen and(max-width:1300px) {
+ 
+  .first{
+    flex-wrap: wrap;
+
+  }
+}
+section.first > div {
+  display: flex;
+  flex-direction: column;
+  padding: 34px 0;
+}
+
+section.first > div :nth-child(1) {
+  font-size: 48px;
+  font-weight: 900;
+}
+
+section.first > div :nth-child(2) {
+  font-size: 24px;
+  font-weight: 400;
+}
+.faq h2{
+  text-align: center;
+  font-size: 48px;
+}
+.faq {
+  background: black;
+  color: white;
+
+  padding: 34px;
+  font-size: 24px;
+}
+
+. .faqbox {
+  justify-content: space-between;
+  display: flex;
+  padding: 24px;
+  max-width: 60vw;
+  margin: 34px auto;
+  cursor:pointer;
+  background-color: #2d2d2d;
+  transition: all 1s ease-out;
+  color: white;
+}
+
+.faqbox:hover{
+  background-color: rgb(37,36,36);
+  color: white;
+}
+
+.footer{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  color: white;
+  max-width: 60vw;
+  margin: auto;
+  gap: 25px;
+
+}
+.footer-item{
+  display: flex;
+  flex-direction: column;
+  gap:14px;
+
+}
+
+footer{
+  color: white;
+  margin:auto;
+  max-width: 60vw;
+  padding: 34px;
+}
+
+footer .questions{
+   padding: 34px 0;
+
+  
+}
+.footer a{
+ font-size: 14px;
+  color: white;
+}
